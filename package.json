@@ -1,5 +1,5 @@
 {
-  "name": "node-soda2-parser",
+  "name": "node-tims-custom-soql-parser",
   "version": "1.0.1",
   "description": "Parse Socrata SODA2 API to Abstract Syntax Tree (AST)",
   "main": "index.js",
