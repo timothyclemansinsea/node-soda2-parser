@@ -263,11 +263,13 @@ exports.limit = function(limit, options) {
   //TODO, use exprToSQL instead
   //limit is [number, number]
   var str;
-  if (options.offset !== false) {
-    str = limit[0].value + ', ' + limit[1].value;
-  } else {
-    str = (limit[0].value + limit[1].value);
-  }
+  str = limit[1].value;
+  console.log(str);
+  //if (options.offset !== false) {
+  //  str = limit[0].value + ', ' + limit[1].value;
+  //} else {
+  //  str = (limit[0].value + limit[1].value);
+  //}
   return str;
 }
 
@@ -307,6 +309,8 @@ exports.parse = function(s, options) {
 
   if (Array.isArray(s.limit)) {
     clauses.push('LIMIT ' + exports.limit(s.limit, options));
+  } else {
+    clauses.push('LIMIT 1000')   
   }
 
   return clauses.join(' ');
