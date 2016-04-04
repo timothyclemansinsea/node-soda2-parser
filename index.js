@@ -31,7 +31,11 @@ exports.parse = function(params) {
   params.$where = where.join(' AND ');
 
   // Construct SQL string to be parsed
-  var sql = 'SELECT ' + (params.$select || '*');
+  if (params.$select_distinct) {
+      var sql = 'SELECT DISTINCT ' + (params.$select_distinct);
+  } else {
+      var sql = 'SELECT ' + (params.$select || '*');
+  }
   if(params.$where) sql += ' WHERE ' + params.$where;
   if(params.$group) sql += ' GROUP BY ' + params.$group;
   if(params.$order) sql += ' ORDER BY ' + params.$order;
