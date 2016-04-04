@@ -25,11 +25,10 @@
     "url": "https://github.com/timwis/node-soda2-parser/issues"
   },
   "homepage": "https://github.com/timwis/node-soda2-parser",
-  "devDependencies": {
-    "mocha": "^2.2.5",
-    "should": "^7.0.2"
-  },
+  
   "dependencies": {
+    "mocha": "^2.2.5",
+    "should": "^7.0.2",
     "node-sqlparser": "^1.0.2"
   }
 }
